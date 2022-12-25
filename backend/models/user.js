@@ -5,7 +5,10 @@ const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+<<<<<<< Updated upstream
     unique: true,
+=======
+>>>>>>> Stashed changes
     minlength: 2,
     maxlength: 30,
   },
@@ -18,7 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     select: false,
+<<<<<<< Updated upstream
     default: '',
+=======
+>>>>>>> Stashed changes
   },
 });
 

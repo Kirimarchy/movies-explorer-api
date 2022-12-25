@@ -59,7 +59,11 @@ module.exports.createUser = (req, res, next) => {
         },
       }))
       .catch((err) => {
+<<<<<<< Updated upstream
         if (err.code === 11000) {
+=======
+        if (err.code === 409) {
+>>>>>>> Stashed changes
           next(new UsedEmailError('Email уже используется'));
         } else if (err.name === 'ValidationError') {
           next(new SomeWentWrongError('Некорректные данные'));

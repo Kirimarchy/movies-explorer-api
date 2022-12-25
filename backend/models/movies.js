@@ -18,7 +18,11 @@ const MovieSchema = new mongoose.Schema({
   },
 
   year: {
+<<<<<<< Updated upstream
     type: Number,
+=======
+    type: String,
+>>>>>>> Stashed changes
     required: true,
   },
 
@@ -43,24 +47,42 @@ const MovieSchema = new mongoose.Schema({
   },
 
   owner: {
+<<<<<<< Updated upstream
     type: String,
+=======
+    type: mongoose.Types.ObjectId,
+>>>>>>> Stashed changes
     ref: 'user',
     required: false,
   },
 
   movieId: {
+<<<<<<< Updated upstream
     type: String,
     ref: 'user',
+=======
+    type: Number,
+    required: true,
+    unique: true,
+>>>>>>> Stashed changes
   },
 
   nameRU: {
     type: String,
     required: true,
+<<<<<<< Updated upstream
+=======
+    unique: true,
+>>>>>>> Stashed changes
   },
 
   nameEN: {
     type: String,
     required: true,
+<<<<<<< Updated upstream
+=======
+    unique: true,
+>>>>>>> Stashed changes
   },
 
 });

@@ -13,6 +13,7 @@ router.get('/', getMovies);
 
 router.post('/', celebrate({
   body: Joi.object().keys({
+<<<<<<< Updated upstream
     nameEN: Joi.string().required().min(2).max(30),
     nameRU: Joi.string().required().min(2).max(30),
     country: Joi.string().required().min(2).max(20),
@@ -24,6 +25,19 @@ router.post('/', celebrate({
     image: Joi.string().required().min(2).max(222),
     trailerLink: Joi.string().required().min(2).max(222),
     thumbnail: Joi.string().required().min(2).max(222),
+=======
+    nameEN: Joi.string().required(),
+    nameRU: Joi.string().required(),
+    country: Joi.string().required(),
+    movieId: Joi.number().required(),
+    director: Joi.string().required(),
+    duration: Joi.number().required(),
+    year: Joi.string().required(),
+    description: Joi.string().required(),
+    image: Joi.string().uri().required(),
+    trailerLink: Joi.string().uri().required(),
+    thumbnail: Joi.string().uri().required(),
+>>>>>>> Stashed changes
   }),
 }), createMovie);
 
