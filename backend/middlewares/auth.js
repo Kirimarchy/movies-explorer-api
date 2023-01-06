@@ -18,11 +18,7 @@ if (!secret && process.env.NODE_ENV === 'production') {
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
-
-  if (req.path === '/signin' || req.path === '/signup') {
-    return next()
-  };
-
+  
   if (!authorization || !authorization.startsWith('Bearer ')) {
     next(new AuthError('Необходима авторизация'));
 
