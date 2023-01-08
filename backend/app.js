@@ -27,8 +27,8 @@ app.use(router);
 app.use(auth);
 mongoose.connect(DATABASE, {});
 
+app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
-app.use(errorLogger);
 
 app.listen(PORT);
