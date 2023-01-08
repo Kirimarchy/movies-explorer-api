@@ -21,14 +21,14 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
-app.use(errors());
-app.use(errorHandler);
-app.use(errorLogger);
 app.use(helmet());
 app.use(rateLimiter);
 app.use(router);
 app.use(auth);
-
 mongoose.connect(DATABASE, {});
+
+app.use(errors());
+app.use(errorHandler);
+app.use(errorLogger);
 
 app.listen(PORT);
