@@ -4,7 +4,7 @@ const AuthError = require('../errors/auth-err');
 
 const SECRET_KEY_DEV = 'd285e3dceed844f902650f40';
 
-require('dotenv').config();
+// require('dotenv').config();
 
 let secret = SECRET_KEY_DEV;
 
@@ -18,7 +18,7 @@ if (!secret && process.env.NODE_ENV === 'production') {
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
-  
+
   if (!authorization || !authorization.startsWith('Bearer ')) {
     next(new AuthError('Необходима авторизация'));
 

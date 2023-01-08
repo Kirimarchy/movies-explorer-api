@@ -22,5 +22,4 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.path('email').validate((email) => validator.isEmail(email), 'Некорректный email');
 
-// eslint-disable-next-line new-cap
 module.exports = new mongoose.model('user', UserSchema);

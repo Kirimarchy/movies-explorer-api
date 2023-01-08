@@ -45,25 +45,22 @@ const MovieSchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
-    required: false,
+    required: true,
   },
 
   movieId: {
     type: Number,
     required: true,
-    unique: true,
   },
 
   nameRU: {
     type: String,
     required: true,
-    unique: true,
   },
 
   nameEN: {
     type: String,
     required: true,
-    unique: true,
   },
 
 });
@@ -72,5 +69,4 @@ MovieSchema.path('image').validate((link) => validator.isURL(link), 'Некор�
 MovieSchema.path('thumbnail').validate((link) => validator.isURL(link), 'Некорректный URL');
 MovieSchema.path('trailerLink').validate((link) => validator.isURL(link), 'Укажите ссылку на фильм');
 
-// eslint-disable-next-line new-cap
 module.exports = new mongoose.model('movie', MovieSchema);
