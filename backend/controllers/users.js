@@ -76,7 +76,9 @@ module.exports.updateProfile = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, { name, email }, { new: true, runValidators: true })
     .then((newUser) => res.send(newUser))
     .catch((err) => {
-      if (err.name === 'ValidationError') {
+      if (err.code === 11000) {
+        next(new UsedEmailError('Email уже используется'));
+      } else if (err.name === 'ValidationError') {
         next(new SomeWentWrongError('Некорректные данные'));
       } else {
         next(err);
